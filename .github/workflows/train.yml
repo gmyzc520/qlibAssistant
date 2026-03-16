@@ -3,6 +3,10 @@ name: Train model
 permissions:
   contents: write
 
+concurrency:
+  group: train-model
+  cancel-in-progress: false
+
 on:
   # 定时触发（避开整点，GitHub 整点负载高易导致任务被丢弃）
   schedule:
